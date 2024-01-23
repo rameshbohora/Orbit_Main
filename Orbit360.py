@@ -28,7 +28,7 @@ try:
     password_field.send_keys("ekg@12321")
 
     # Locate the sign-in button by classname and click it
-    signin_button = driver.find_element(By.CLASS_NAME, "primary-btn")
+    signin_button = driver.find_element(By.XPATH, '/html/body/div/div[2]/form/div[4]/button')
     signin_button.click()
     time.sleep(5)
 
@@ -36,22 +36,22 @@ try:
     time.sleep(3)
 
     # Find and click each introjs button with a 3-second wait after each click
-    driver.find_element(By.CLASS_NAME, "introjs-button.introjs-nextbutton").click()
+    driver.find_element(By.XPATH, '/html/body/div[8]/div/div[5]/a[3]').click()
     time.sleep(3)
 
-    driver.find_element(By.CLASS_NAME, "introjs-button.introjs-nextbutton").click()
+    driver.find_element(By.XPATH, '/html/body/div[8]/div/div[5]/a[3]').click()
     time.sleep(3)
 
-    driver.find_element(By.CLASS_NAME, "introjs-button.introjs-nextbutton").click()
+    driver.find_element(By.XPATH, '/html/body/div[8]/div/div[5]/a[3]').click()
     time.sleep(3)
 
-    driver.find_element(By.CLASS_NAME, "introjs-button.introjs-nextbutton").click()
+    driver.find_element(By.XPATH, '/html/body/div[8]/div/div[5]/a[3]').click()
     time.sleep(3)
 
-    driver.find_element(By.CLASS_NAME, "introjs-button.introjs-skipbutton.introjs-donebutton").click()
+    driver.find_element(By.XPATH, '/html/body/div[8]/div/div[5]/a[1]').click()
     time.sleep(3)
 
-    driver.find_element(By.CLASS_NAME,"get-started-btn").click() # Numbers(Buy Now Button)
+    driver.find_element(By.XPATH,'/html/body/div[3]/div[2]/div[2]/div/div/div[3]/div/div[4]/a').click() # Numbers(Buy Now Button)
     time.sleep(3)
 
     driver.find_element(By.XPATH,'//html/body/div[3]/div[1]/div/a[1]/span').click() # Get Started dashboard Menu
@@ -247,7 +247,7 @@ try:
 
 
     driver.find_element(By.XPATH,'//*[@id="wrapper-main"]/div[1]/div/a[6]/span').click() #Orbit360(dashboard menu)
-    time.sleep(2)
+    time.sleep(5)
 
 
 
