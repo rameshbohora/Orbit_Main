@@ -7,6 +7,9 @@ import time
 # Set the URL you want to open
 APP_URL = "https://dashboard.orbit360.cx/"
 
+email = input("Enter your email: ")
+password = input("Enter your password: ")
+
 # Create a Chrome WebDriver instance
 driver = webdriver.Chrome()
 driver.maximize_window()
@@ -24,10 +27,10 @@ try:
     password_field = driver.find_element(By.ID, "password")
 
     # Input username and password
-    username_field.send_keys("ramesh.bohara@apexcollege.edu.np")
-    password_field.send_keys("ekg@12321")
+    username_field.send_keys(email)
+    password_field.send_keys(password)
 
-    # Locate the sign-in button by classname and click it
+    # Locate the sign-in button and click it
     signin_button = driver.find_element(By.XPATH, '/html/body/div/div[2]/form/div[4]/button')
     signin_button.click()
     time.sleep(5)
@@ -65,6 +68,8 @@ try:
 
     driver.find_element(By.XPATH,"/html/body/div[3]/div[2]/div[2]/div/div/div[5]/div/div[4]/a[1]").click() # Channels(Get Connected button)
     time.sleep(3)
+
+
 
     driver.find_element(By.XPATH,"/html/body/div[3]/div[1]/div/a[2]/span").click() # Users(dashboard menu)
     time.sleep(3)
@@ -251,7 +256,8 @@ try:
 
 
 
-
+except Exception as e:
+    print(f"An error occurred: {e}")
 
 finally:
     # Close the browser window
